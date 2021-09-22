@@ -50,8 +50,23 @@ export const postEdit = (req, res) => {
 
 export const search = (req, res) => res.send("search video");
 
-export const upload = (req, res) => res.send("upload video");
-
 export const remove = (req, res) => {
   res.send(`delete video# ${req.params.id}`);
+};
+
+export const getUpload = (req, res) => {
+  return res.render("upload", { pageTitle: "upload video" });
+};
+
+export const postUpload = (req, res) => {
+  const newVideo = {
+    title: req.body.title,
+    rating: 0,
+    comments: 0,
+    createdAt: "0 mins ago",
+    views: 0,
+    id: videos.length + 1,
+  };
+  videos.push(newVideo);
+  return res.redirect("/");
 };
