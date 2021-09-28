@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  trending,
+  home,
   getEdit,
   postEdit,
   see,
@@ -10,9 +10,9 @@ import {
 
 const videoRouter = express.Router();
 
-videoRouter.get("/", trending);
-videoRouter.get("/:id(\\d+)", see);
-videoRouter.route("/:id(\\d+)/edit").get(getEdit).post(postEdit);
+videoRouter.get("/", home);
 videoRouter.route("/upload").get(getUpload).post(postUpload);
+videoRouter.get("/:id", see);
+videoRouter.route("/:id(\\d+)/edit").get(getEdit).post(postEdit);
 
 export default videoRouter;
