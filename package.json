@@ -2,17 +2,9 @@
   "name": "wetube",
   "version": "1.0.0",
   "description": "app for videos.",
-  "nodemonConfig": {
-    "ignore": [
-      "webpack.config.js",
-      "src/client/*",
-      "assets/*"
-    ],
-    "delay": "2500"
-  },
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec npx babel-node src/init.js",
+    "dev": "nodemon",
     "assets": "webpack"
   },
   "repository": {
@@ -41,10 +33,11 @@
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
-    "nodemon": "^2.0.7",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
+    "kill-port": "^1.6.1",
     "mini-css-extract-plugin": "^2.4.2",
+    "nodemon": "^2.0.7",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
