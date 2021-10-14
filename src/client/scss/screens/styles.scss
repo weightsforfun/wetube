@@ -1,0 +1,13 @@
+@import "../config/variables";
+@import "../config/_reset.scss";
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: rgba(20, 20, 20, 0.849);
+  color: white;
+}
