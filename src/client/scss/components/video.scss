@@ -1,0 +1,27 @@
+.video_mixin {
+  .video_image {
+    display: block;
+    height: 150px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .video_title {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .video_owner_name {
+    display: block;
+    margin: 15px 0px;
+  }
+  .video_meta {
+    margin-top: 15px;
+    span {
+      margin-right: 10px;
+      i {
+        font-size: 3px;
+      }
+    }
+  }
+}

@@ -2,8 +2,12 @@ extends base.pug
 include mixin/video
 
 block content  
-    h1 wlecome home!
-    each video in videos 
-        +video(video)
-    else 
-        h4 sorry there is no video  
+    div.video_grid
+        each video in videos 
+            +video(video)
+            +video(video)
+            +video(video)
+            +video(video)
+            +video(video)
+        else 
+            h4 sorry there is no video  

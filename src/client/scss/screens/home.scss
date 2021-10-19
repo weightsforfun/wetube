@@ -1,0 +1,6 @@
+.home {
+  padding: 20px;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -18,7 +18,7 @@ videoRouter
   .all(protectorMiddleware)
   .get(getUpload)
   .post(uploadVideo.single("video"), postUpload);
-videoRouter.get("/:id", see);
+videoRouter.get("/:id([0-9a-f]{24})", see);
 videoRouter
   .route("/:id/edit")
   .all(protectorMiddleware)

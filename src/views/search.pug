@@ -2,9 +2,10 @@ extends base
 include mixin/video
 
 block content 
-    form( method="get")
+    form( method="get").search_form
         input(placeholder="search by title" type="text", name="keyword")
-        input(type="submit", value="search now") 
-    div 
+        button 
+            i.fas.fa-search 
+    div.video_grid 
         each video in videos
             +video(video)

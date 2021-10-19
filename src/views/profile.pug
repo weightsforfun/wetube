@@ -2,7 +2,8 @@ extends base
 include ./mixin/video
 
 block content 
-    each video in user.videos 
-        +video(video)
-    else 
-        li sorry nothing found 
+    div.video_grid
+        each video in user.videos 
+            +video(video)
+        else 
+            li sorry nothing found 

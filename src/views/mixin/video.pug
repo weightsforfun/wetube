@@ -1,6 +1,13 @@
 mixin video(video)
-    div 
-        a(href=`/videos/${video.id}`)=video.title
-        p=video.description
-        small=video.createdAt
-        hr
+    div.video_mixin
+        a(href=`/videos/${video.id}`).video_image
+        div.video_info  
+            div.video_title  
+                a(href=`/videos/${video.id}`)=video.title
+            span.video_owner_name=video.owner.name
+            div.video_meta
+                span=`${video.meta.views} views`
+                span 
+                    i.fas.fa-circle
+                span=video.createdAt
+        

@@ -1,0 +1,26 @@
+header {
+  margin-bottom: 30px;
+  i {
+    color: red;
+  }
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  align-items: center;
+  flex-direction: row;
+  nav {
+    margin-right: 20px;
+  }
+  i {
+    font-size: 60px;
+  }
+  li {
+    padding: 20px;
+    display: inline-block;
+    font-size: xx-large;
+    i {
+      color: white;
+      font-size: 40px;
+    }
+  }
+}
