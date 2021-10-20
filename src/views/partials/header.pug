@@ -2,22 +2,30 @@ header
     a(href="/")
         i.fab.fa-youtube  
     nav
-        ul
-            if loggedIn
-                li     
-                    a(href="/users/logout") Log Out  
-                li 
-                    a(href=`/users/${loggedInUser._id}`) My Profile  
-
-                li  
-                    a(href="/users/edit") Edit Profile 
-                li
-                    a(href="/videos/upload") Upload
-            else 
-                li     
-                    a(href="/login") Login 
-                li 
-                    a(href="/join") Join
-                li 
-                    a(href="/search")
-                        i.fas.fa-search 
+            ul
+                if loggedIn
+                    li 
+                        a(href="/search")
+                            i.fas.fa-search
+                    li 
+                        a(href=`/users/${loggedInUser._id}`) My Profile  
+                    li  
+                        a(href="/users/edit") Edit Profile 
+                    li
+                        a(href="/videos/upload") Upload
+                    li     
+                        a(href="/users/logout") Log Out  
+                    li 
+                        a(href=`/users/${loggedInUser._id}`)
+                            if loggedInUser.avatarUrl
+                                img.header-avatar(src="/"+loggedInUser.avatarUrl)
+                            else 
+                                i.far.fa-smil
+                else 
+                    li 
+                        a(href="/search")
+                            i.fas.fa-search
+                    li     
+                        a(href="/login") Login 
+                    li 
+                        a(href="/join") Join

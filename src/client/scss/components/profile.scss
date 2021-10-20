@@ -1,0 +1,16 @@
+.profile {
+  img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    padding-bottom: 10px;
+  }
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}

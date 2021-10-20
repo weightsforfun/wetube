@@ -7,10 +7,13 @@
 @import "../components/shared.scss";
 @import "../components/form.scss";
 @import "../components/social-login.scss";
+@import "../components/profile.scss";
 
 @import "../screens/home.scss";
 @import "../screens/search.scss";
 @import "../screens/login.scss";
+@import "../screens/edit-profile.scss";
+
 a {
   text-decoration: none;
   color: inherit;

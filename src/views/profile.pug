@@ -2,6 +2,9 @@ extends base
 include ./mixin/video
 
 block content 
+    div.profile
+        img(src="/"+user.avatarUrl )
+        span=user.username
     div.video_grid
         each video in user.videos 
             +video(video)
