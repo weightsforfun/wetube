@@ -96,6 +96,7 @@ export const deleteVideo = async (req, res) => {
   } = req.session;
   const video = await Video.findById(id);
   if (!video) {
+    req.flash("error", "you are not owner of video");
     return res.status(404).render("404", { pageTitle: "Video not found" });
   }
   if (String(_id) !== String(video.owner)) {
