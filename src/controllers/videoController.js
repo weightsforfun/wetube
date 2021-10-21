@@ -1,5 +1,6 @@
 import Video from "../model/Video";
 import User from "../model/User";
+import Comment from "../model/Comment";
 
 export const home = async (req, res) => {
   const videos = await Video.find({})
@@ -11,7 +12,15 @@ export const home = async (req, res) => {
 export const see = async (req, res) => {
   const { id } = req.params;
 
-  const video = await Video.findById(id).populate("owner");
+  const video = await Video.findById(id)
+    .populate("owner")
+    .populate({
+      path: "comments",
+      populate: {
+        path: "owner",
+        model: "User",
+      },
+    });
   if (video) {
     return res.render("watch", { pageTitle: video.title, video });
   }
@@ -128,5 +137,39 @@ export const registerView = async (req, res) => {
     video.meta.views = video.meta.views + 1;
     await video.save();
     res.sendStatus(200);
+  }
+};
+
+export const createComment = async (req, res) => {
+  const {
+    session: { user },
+    body: { text },
+    params: { id },
+  } = req;
+  const video = await Video.findById(id);
+  if (!video) {
+    res.sendStatus(404);
+  }
+  const comment = await Comment.create({
+    text,
+    owner: user._id,
+    video: id,
+  });
+  video.comments.push(comment._id);
+  video.save();
+  return res.status(201).json({ newCommentId: comment._id, user });
+};
+
+export const deleteComment = async (req, res) => {
+  const {
+    params: { id },
+    body: { comment_owner_id },
+  } = req;
+  if (String(comment_owner_id) === String(req.session.user._id)) {
+    await Comment.findByIdAndDelete(id);
+    return res.sendStatus(201);
+  } else {
+    req.flash("error", "you are not owner of video");
+    return res.status(403).redirect("/");
   }
 };
