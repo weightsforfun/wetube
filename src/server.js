@@ -4,7 +4,7 @@ import session from "express-session";
 import flash from "express-flash";
 import MongoStore from "connect-mongo";
 import rootRouter from "./router/rootRouter";
-import userRouter from "./router/userrouter";
+import userRouter from "./router/userRouter";
 import videoRouter from "./router/videoRouter";
 import { localsMiddleware } from "./middleware";
 import apiRouter from "./router/apiRouter";
