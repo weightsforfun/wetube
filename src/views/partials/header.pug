@@ -17,10 +17,10 @@ header
                         a(href="/users/logout") Log Out  
                     li 
                         a(href=`/users/${loggedInUser._id}`)
-                            if loggedInUser.avatarUrl
-                                img.header-avatar(src="/"+loggedInUser.avatarUrl)
+                            if loggedInUser.socialOnly
+                                img.header-avatar(src=loggedInUser.avatarUrl)
                             else 
-                                i.far.fa-smil
+                                img.header-avatar(src="/"+loggedInUser.avatarUrl)
                 else 
                     li 
                         a(href="/search")
