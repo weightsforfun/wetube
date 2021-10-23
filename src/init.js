@@ -6,7 +6,7 @@ import User from "./model/User";
 import Comment from "./model/Comment";
 import app from "./server";
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const start = () => {
   console.log(`https://localhost:${PORT}`);
