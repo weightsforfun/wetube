@@ -11,6 +11,10 @@
     "dev": "nodemon",
     "assets": "webpack --mode=development -w"
   },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/weightsforfun/wetube.git"
