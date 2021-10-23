@@ -12,8 +12,8 @@
     "assets": "webpack --mode=development -w"
   },
   "engines": {
-    "node": "16.5.x",
-    "npm": "7.19.x"
+    "node": "16.x",
+    "npm": "7.x"
   },
   "repository": {
     "type": "git",
