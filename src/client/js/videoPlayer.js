@@ -54,11 +54,13 @@ const formatTime = (seconds) => {
 };
 
 const handleLoadedMetaData = () => {
+  console.log("meta");
   totalTime.innerText = formatTime(Math.floor(video.duration));
   timeline.max = Math.floor(video.duration);
 };
 
 const handleTimeUpdate = () => {
+  console.log("time");
   currentTime.innerText = formatTime(Math.floor(video.currentTime));
   timeline.value = Math.floor(video.currentTime);
 };
@@ -114,7 +116,7 @@ videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 timeline.addEventListener("input", handleTimeLineChange);
 fullScreenBtn.addEventListener("click", handleFullScreenBtn);
-videoContainer.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     handlePlayClick();
   } else if (event.code === "ArrowLeft") {
