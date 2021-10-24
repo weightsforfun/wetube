@@ -114,9 +114,8 @@ videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 timeline.addEventListener("input", handleTimeLineChange);
 fullScreenBtn.addEventListener("click", handleFullScreenBtn);
-window.addEventListener("keydown", (event) => {
+videoContainer.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
-    event.preventDefault();
     handlePlayClick();
   } else if (event.code === "ArrowLeft") {
     //Left
