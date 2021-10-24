@@ -3,7 +3,7 @@ include ./mixin/video
 
 block content 
     div.profile
-        img(src="/"+user.avatarUrl )
+        img(src=user.avatarUrl )
         span=user.username
     div.video_grid
         each video in user.videos 

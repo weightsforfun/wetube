@@ -20,7 +20,7 @@ header
                             if loggedInUser.socialOnly
                                 img.header-avatar(src=loggedInUser.avatarUrl)
                             else 
-                                img.header-avatar(src="/"+loggedInUser.avatarUrl)
+                                img.header-avatar(src=loggedInUser.avatarUrl)
                 else 
                     li 
                         a(href="/search")

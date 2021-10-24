@@ -78,7 +78,7 @@ export const postUpload = async (req, res) => {
   } = req.session;
   try {
     const newVideo = await Video.create({
-      fileUrl: file.path,
+      fileUrl: file.location,
       title,
       description,
       owner: _id,

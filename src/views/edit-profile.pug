@@ -3,7 +3,7 @@ extends base.pug
 block content 
     div.edit-profile
         div.profile
-            img(src="/"+loggedInUser.avatarUrl )
+            img(src=loggedInUser.avatarUrl )
             span=loggedInUser.username
         form(method="POST" , enctype="multipart/form-data")
             label(for="avatar") Profile  
