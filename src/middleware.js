@@ -11,13 +11,13 @@ const s3 = new aws.S3({
 
 const s3ImageUploader = multerS3({
   s3: s3,
-  bucket: "weightsforfun-wetube",
+  bucket: "weightsforfun-wetube/images",
   acl: "public-read",
 });
 
 const s3Videouploader = multerS3({
   s3: s3,
-  bucket: "weightsforfun-wetube",
+  bucket: "weightsforfun-wetube/videos",
   acl: "public-read",
 });
 

@@ -79,7 +79,7 @@ export const postUpload = async (req, res) => {
   const isHeroku = process.env.NODE_ENV === "production";
   try {
     const newVideo = await Video.create({
-      fileUrl: isHeroku ? file.location : file.path,
+      fileUrl: file.location,
       title,
       description,
       owner: _id,
