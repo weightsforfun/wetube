@@ -3,7 +3,10 @@ include ./mixin/video
 
 block content 
     div.profile
-        img(src=user.avatarUrl )
+        if isHeroku
+            img(src=user.avatarUrl)
+        else 
+            img(src=loggedInUser.avatarUrl)
         span=user.username
     div.video_grid
         each video in user.videos 

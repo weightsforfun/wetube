@@ -79,7 +79,7 @@ export const postUpload = async (req, res) => {
   const isHeroku = process.env.NODE_ENV === "production";
   try {
     const newVideo = await Video.create({
-      fileUrl: file.location,
+      fileUrl: isHeroku ? file.location : file.path,
       title,
       description,
       owner: _id,
@@ -113,6 +113,8 @@ export const deleteVideo = async (req, res) => {
     return res.status(403).redirect("/");
   }
   await Video.findByIdAndDelete(id);
+  user.videos.splice(user.videos.indexOf(id), 1);
+  user.save();
   return res.redirect("/");
 };
 
